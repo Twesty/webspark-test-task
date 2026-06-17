@@ -118,6 +118,7 @@ function buildcopy() {
     'app/assets/svg/**/*.svg',
     'app/assets/fonts/**/*',
     'app/assets/favicon.ico',
+    'app/libs/**/*',
   ], { base: 'app/', encoding: false })
     .pipe(dest('dist'))
 }
