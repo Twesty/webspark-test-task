@@ -1,0 +1,63 @@
+$container-breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 1024px,
+  lg: 1280px,
+  xl: 1680px,
+  2xl: 1920px,
+  3xl: 2560px,
+);
+
+@mixin container-breakpoints($property, $breakpoints) {
+  @each $breakpoint, $value in $breakpoints {
+    @media screen and (max-width: #{map-get($container-breakpoints, $breakpoint)}) {
+      #{$property}: #{$value};
+    }
+  }
+}
+
+@mixin media-breakpoint-down($name, $breakpoints: $container-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints) + 1;
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-up($name, $breakpoints: $container-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@function breakpoint-max($name, $breakpoints: $container-breakpoints) {
+  $max: map-get($breakpoints, $name);
+  @return if($max and $max > 0, $max - 0.02, null);
+}
+
+@function breakpoint-min($name, $breakpoints: $container-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+@function breakpoint-infix($name, $breakpoints: $container-breakpoints) {
+  @return if(breakpoint-min($name, $breakpoints) == null, '', '-#{$name}');
+}
+
+@function reverse($list) {
+  $result: ();
+
+  @for $i from length($list) * -1 through -1 {
+    $result: append($result, nth($list, abs($i)));
+  }
+
+  @return $result;
+}

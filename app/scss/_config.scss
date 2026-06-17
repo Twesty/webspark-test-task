@@ -1,0 +1,52 @@
+$defaultFont: 'Roboto', sans-serif;
+$systemFont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+
+// IMPORT SECTION
+
+@use 'color-kit';
+@use "_mixins/rem" as *;
+@use "_mixins/font-face" as *;
+@use '_mixins/breakpoints' as *;
+
+// THEMING SECTION
+
+@each $theme-name, $theme in color-kit.$themes {
+	.#{ $theme-name }-theme {
+		@each $name, $color in $theme {
+			--#{ $name }: #{$color};
+		}
+	}
+}
+
+// FONTS LOAD SECTION
+
+// @include font-face('', normal, 400, '/assets/fonts/');
+
+// GENERAL CSS SETTINGS
+
+::placeholder {
+	color: #666
+}
+
+
+html {
+	font-size: 16px;
+}
+
+body {
+	position: relative;
+	overflow-x: hidden;
+	min-width: 320px;
+
+	padding: 0;
+	margin: 0;
+
+	font-family: $defaultFont;
+	line-height: 1.4;
+}
+
+@include media-breakpoint-down(xl) {
+	html {
+		font-size: 14px;
+	}
+}

@@ -1,0 +1,8 @@
+/**/node_modules/
+/.git/
+/.idea
+/**/*.DS_Store
+/**/Thumbs.db
+/**/debug.log
+/dist
+app/js/app.min.js
