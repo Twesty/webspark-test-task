@@ -1,7 +1,27 @@
 $themes: (
-  'dark': (primary: #000000,
+  'dark': (
+    primary: #3D8EDA,
+
+    neutral-0:   #000000,
+    neutral-30:  #5F5F5F,
+    neutral-40:  #929292,
+    neutral-50:  #C8C7C7,
+    neutral-70:  #DEDEDE,
+    neutral-80:  #EBEBEB,
+    neutral-90: #FAFAFA,
+    neutral-100: #FFFFFF,
   ),
 
-  'light': (primary: #000000,
+  'light': (
+    primary: #3D8EDA,
+
+    neutral-0:   #000000,
+    neutral-30:  #5F5F5F,
+    neutral-40:  #929292,
+    neutral-50:  #C8C7C7,
+    neutral-70:  #DEDEDE,
+    neutral-80:  #EBEBEB,
+    neutral-90: #FAFAFA,
+    neutral-100: #FFFFFF,
   ),
 );

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Webspark test task</title>
+	<title>Monblan</title>
 	<meta name="description" content="Description">
 
 	<meta name="viewport"
@@ -32,3 +32,81 @@
 </head>
 
 <body class="light-theme">
+	<header class="header">
+		<div class="header__logo">
+			<img src="assets/svg/logo.svg" alt="Monblan">
+		</div>
+		<div class="header__content">
+			<div class="header__title">
+				<h4>monblanproject</h4>
+				<div class="header__start-date">Start on 17-02-2016</div>
+			</div>
+			<ul class="header__stats list-style-none">
+				<li class="header__stat">
+					<strong>870</strong>
+					<span>posts</span>
+				</li>
+				<li class="header__stat">
+					<strong>11,787</strong>
+					<span>followers</span>
+				</li>
+				<li class="header__stat">
+					<strong>112</strong>
+					<span>following</span>
+				</li>
+			</ul>
+			<div class="header__filters">
+				<div class="header__filters-title">Date</div>
+				<div class="header__filters-content">
+					<div class="form-field header__field">
+						<div class="form-field__content">
+							<input readonly type="text" id="date-from" name="from" placeholder="from"
+								class="form-field__field">
+							<div class="form-field__suffix">
+								<button data-datepicker-clear="#date-from" type="button" class="button button--icon">
+									<svg width="24" height="24">
+										<use xlink:href="#close"></use>
+									</svg>
+								</button>
+								<button data-datepicker-open="#date-from" type="button" class="button button--icon">
+									<svg width="20" height="20">
+										<use xlink:href="#calendar"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="form-field header__field">
+						<div class="form-field__content">
+							<input readonly type="text" id="date-to" name="to" placeholder="to"
+								class="form-field__field">
+							<div class="form-field__suffix">
+								<button data-datepicker-clear="#date-to" type="button" class="button button--icon">
+									<svg width="24" height="24">
+										<use xlink:href="#close"></use>
+									</svg>
+								</button>
+								<button data-datepicker-open="#date-to" type="button" class="button button--icon">
+									<svg width="20" height="20">
+										<use xlink:href="#calendar"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</header>
+
+	<svg style="display: none;">
+		<defs>
+			<symbol id="close" viewBox="0 0 24 24">
+				<path fill="currentColor"
+					d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z" />
+			</symbol>
+			<symbol id="calendar" viewBox="0 0 20 20">
+				<path fill="currentColor"
+					d="M1 4c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2zm2 2v12h14V6zm2-6h2v2H5zm8 0h2v2h-2zM5 9h2v2H5zm0 4h2v2H5zm4-4h2v2H9zm0 4h2v2H9zm4-4h2v2h-2zm0 4h2v2h-2z" />
+			</symbol>
+		</defs>
+	</svg>

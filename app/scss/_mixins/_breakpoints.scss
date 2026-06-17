@@ -8,6 +8,14 @@ $container-breakpoints: (
   3xl: 2560px,
 );
 
+$container-padding: 20px;
+$container-max-width: (
+  xs: 100%,
+  sm: 100%,
+  md: 100%,
+  3xl: 876px,
+);
+
 @mixin container-breakpoints($property, $breakpoints) {
   @each $breakpoint, $value in $breakpoints {
     @media screen and (max-width: #{map-get($container-breakpoints, $breakpoint)}) {

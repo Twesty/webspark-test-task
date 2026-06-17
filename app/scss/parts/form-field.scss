@@ -1,0 +1,30 @@
+@use "../_mixins/rem" as *;
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+
+    &__content {
+        display: flex;
+
+        background-color: var(--neutral-100);
+
+        border: 1px solid var(--neutral-70);
+        border-radius: 4px;
+    }
+
+    &__field {
+        flex-grow: 1;
+        padding: 5px 8px;
+    }
+
+    &__suffix {
+        display: flex;
+        align-items: stretch;
+        background-color: var(--neutral-80);
+
+        & > * {
+            border-left: 1px solid var(--neutral-70);
+        }
+    }
+}

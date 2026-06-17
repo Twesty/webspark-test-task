@@ -1,1 +1,78 @@
-@import 'config';
+@use 'config';
+
+@use '_mixins/rem' as *;
+@use '_mixins/breakpoints' as *;
+
+@use 'parts/header';
+@use 'parts/event';
+@use 'parts/form-field' as *;
+@use 'parts/input' as *;
+@use 'parts/button' as *;
+@forward '../libs/air-datepicker/air-datepicker.css';
+
+.background {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+
+    pointer-events: none;
+    cursor: default;
+
+    &--top {
+        inset: 0;
+        max-width: 47%;
+    }
+
+    &--bottom {
+        right: 0;
+        bottom: rem(48px);
+        max-width: rem(210px);
+    }
+}
+
+.main {
+    padding-bottom: rem(60px);
+}
+
+.events {
+    display: flex;
+    flex-direction: column;
+    
+    &__header {
+        display: flex;
+        padding: rem(18px) 0;
+    }
+
+    &__view {
+        display: flex;
+        align-items: center;
+        gap: rem(18px);
+
+        margin-left: auto;
+    }
+
+    &__view-item {
+        color: var(--neutral-50);
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+            color: var(--primary)
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        &.grid-view {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        }
+    }
+
+    &__load-more {
+        margin: rem(32px) auto 0;
+    }
+}

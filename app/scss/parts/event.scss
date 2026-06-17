@@ -1,0 +1,131 @@
+@use '_mixins/rem' as *;
+@use "../_mixins/breakpoints" as *;
+
+.event {
+    display: flex;
+
+    background-color: color-mix(in srgb, var(--neutral-100), transparent 15%);
+    backdrop-filter: blur(5px);
+
+    &.grid-view {
+        flex-direction: column;
+
+        .event {
+            &__image {
+                height: 203px;
+            }
+
+            &__info {
+                flex-wrap: wrap;
+                padding: 12px 12px 16px 12px;
+            }
+
+            &__info-stats {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+
+            &__info-item {
+                &--image-upload {
+                    width: 100%;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 4px;
+
+                    .event__info-title {
+                        font-size: 14px;
+                    }
+
+                    .event__info-content {
+                        margin: 0;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__image {
+        height: 86px;
+        aspect-ratio: 1/1;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-grow: 1;
+        gap: rem(32px);
+
+        padding: rem(16px) rem(16px) rem(16px) rem(30px);
+
+        font-weight: 500;
+    }
+
+    &__info-item {
+        flex-grow: 1;
+        flex-basis: 0;
+    }
+
+    &__info-content {
+        margin-top: 8px;
+        font-size: 14px;
+    }
+
+    &__info-stats,
+    &__info-stat {
+        display: flex;
+        align-items: center;
+    }
+
+    &__info-stats {
+        gap: rem(18px)
+    }
+
+    &__info-stat {
+        gap: 6px;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .event.list-view {
+        .event {
+            &__info {
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 8px;
+
+                padding: 8px 12px;
+
+                font-size: 12px;
+            }
+
+            &__info-content {
+                font-size: 12px;
+            }
+
+            &__info-item--image-upload {
+                min-width: 100%;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                padding-top: 8px;
+
+                border-top: 1px solid var(--neutral-80);
+
+                .event__info-content {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

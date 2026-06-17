@@ -31,9 +31,12 @@ $systemFont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
 // GENERAL CSS SETTINGS
 
 ::placeholder {
-	color: #666
+	
 }
 
+* {
+	transition: color 0.3s ease, background-color 0.3s ease;
+}
 
 html {
 	font-size: 16px;
@@ -42,16 +45,42 @@ html {
 body {
 	position: relative;
 	overflow-x: hidden;
+
 	min-width: 320px;
+	min-height: 100dvh;
 
 	padding: 0;
 	margin: 0;
 
 	font-family: $defaultFont;
 	line-height: 1.4;
+
+	color: var(--text);
+	background-color: var(--neutral-90);
 }
 
-@include media-breakpoint-down(xl) {
+.container {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 16px;
+	box-sizing: border-box;
+
+	@each $breakpoint, $max-width in reverse($container-max-width) {
+		@include container-breakpoints(max-width, ($breakpoint: $max-width,));
+	}
+}
+
+.list-style-none {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+@include media-breakpoint-down(lg) {
 	html {
 		font-size: 14px;
 	}
